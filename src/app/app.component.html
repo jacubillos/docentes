@@ -1,0 +1,98 @@
+<div class="container app">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="text-center">
+                {{title}}
+            </h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <h2>Ingresar Datos de Estudiante o Profesor:</h2>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="name" class="control-label col-sm-2">
+                        Nombre
+                    </label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="name" name="name" [(ngModel)]="model.name" placeholder="Ingrese su Nombre">
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="position" class="control-label col-sm-2">
+                        Cargo
+                    </label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="position" name="position" [(ngModel)]="model.position" placeholder="Ingrese si es Docente o Estudiante">
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="identy" class="control-label col-sm-2">
+                        Cedula
+                    </label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="identy" name="identy" [(ngModel)]="model.identy" placeholder="Ingrese su Cedula">
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="control-label col-sm-2">
+                        Email
+                    </label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="email" name="email" [(ngModel)]="model.email" placeholder="Ingrese Email">
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="phone" class="control-label col-sm-2">
+                        Celular
+                    </label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="phone" name="phone" [(ngModel)]="model.phone" placeholder="Ingrese su Celular">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-390" style="padding-top: 10px;">
+                        <button
+                            type="submit"
+                            class="btn btn-primary"
+                            (click)="addPeople()"
+                        >
+                            Guardar Información
+                        </button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <h2>Información</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Cargo</th>
+                        <th>Cedula</th>
+                        <th>Email</th>
+                        <th>Celular</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let people of people; let i = index">
+                        <td>{{people.name}}</td>
+                        <td>{{people.position}}</td>
+                        <td>{{people.identy}}</td>
+                        <td>{{people.email}}</td>
+                        <td>{{people.phone}}</td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
